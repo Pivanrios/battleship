@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
        //declare a variable that will hold the number of guesses
@@ -16,12 +18,11 @@ public class App {
        boolean isAlive = true;
        System.out.println(isAlive);
        
-       //
-       String[] guesses = {"1","2","3","4","5","6","7","8"};
-       //create a while loop that holds until the boat is dead
-       System.out.println(guesses);
+       Scanner input = new Scanner(System.in);
        while(isAlive == true){
-            String resultado =  navyBoat.checkYourself(guesses[numOfGuesses]);
+            System.out.println("Enter Guess:");
+            String guess = input.next();
+            String resultado =  navyBoat.checkYourself(guess);
             System.out.println(resultado);
             numOfGuesses++;
             if(resultado == "kill"){
